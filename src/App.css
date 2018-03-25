@@ -1,0 +1,74 @@
+
+.App-header {
+  color: #007977;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-bottom: 3px solid #007977;
+  padding-bottom: 10px;
+}
+
+.App-title {
+  font-size: 2em;
+}
+
+#root {
+  background-color: #009799;
+}
+
+.content {
+  background-color: #43cac7;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.thead {
+  font-size: 20px;
+  height: 50px;
+}
+
+th {
+  text-align: center;
+}
+
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border-bottom: 2px solid #007977;
+}
+
+.name {
+  text-align: left;
+  margin: 0 10px;
+}
+
+.camper {
+  text-align: left;
+}
+
+.img {
+  height: 25px;
+  margin: 0 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.footer {
+  height: 50px;
+  border-top: 3px solid #007977;
+  padding-top: 10px;
+  background-color: white;
+}
+
+.melissa {
+  color: #007977;
+  font-size: 24px;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.github {
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  margin: 0 20px;
+}
