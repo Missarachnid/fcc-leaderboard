@@ -51,7 +51,7 @@ class Content extends React.Component {
               <h3>Please refresh.</h3>
             </div>
           )}
-          <Table striped bordered condensed hover className='main'>
+          <Table striped bordered condensed hover>
               <thead className='thead'>
                 <tr>
                   <th>#</th>
