@@ -52,6 +52,12 @@ th {
   border-radius: 50%;
 }
 
+.error {
+  text-align: center;
+  background-color: white;
+  padding: 10px 10px 20px 10px;
+}
+
 .footer {
   height: 50px;
   border-top: 3px solid #007977;
