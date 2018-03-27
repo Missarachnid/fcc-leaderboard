@@ -1,5 +1,6 @@
-#Free Code Camp Leaderboard Project
-###Author
+# Free Code Camp Leaderboard Project
+### Author
+
 Melissa Kepler A.K.A. Missarachnid
 ### Built With:
 *  React
