@@ -7,14 +7,23 @@ class Content extends React.Component {
   state = {
     recent: [],
     ever: [],
-    toggle: true
+    toggle: true,
+    error: false
   }
 
   retrieveData(url, currentState){
     fetch(url)
-    .then(response => response.json())
-    .then(data => this.setState({[currentState]: data})
-    );
+    .then(response => {
+      if(!response.ok){
+        this.setState({error: true});
+        throw response;
+      }
+      return response.json()})
+    .then(data => this.setState({[currentState]: data}))
+    .catch(err => {
+      console.log(err);
+      this.setState({error: true});
+    });
   }
 
   componentDidMount(){
@@ -30,12 +39,18 @@ class Content extends React.Component {
   }
 
   render(){
-    const {recent, ever, toggle} = this.state;
+    const {recent, ever, toggle, error} = this.state;
     let choice;
-    this.toggle ? choice = ever : choice = recent;
+    toggle ? choice = ever : choice = recent;
     return(
       <div className='container'>
         <div className='content'>
+          {error && (
+            <div className='error'>
+              <h3>There has been an error.</h3>
+              <h3>Please refresh.</h3>
+            </div>
+          )}
           <Table striped bordered condensed hover className='main'>
               <thead className='thead'>
                 <tr>
@@ -46,7 +61,7 @@ class Content extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              {choice.map((entry, index) => (
+              {error === false && (choice.map((entry, index) => (
                 <tr key={entry.username}>
                   <td>{index + 1}</td>
                   <td className='name'>
@@ -58,7 +73,7 @@ class Content extends React.Component {
                   <td>{entry.recent}</td>
                   <td>{entry.alltime}</td>
                 </tr>
-                ))}
+                )))}
               </tbody>
           </Table>
         </div>
